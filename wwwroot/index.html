@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MODAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- animate.css -->
+    <link href="css/animate.base.css" rel="stylesheet" />
+    <link href="css/shake.css" rel="stylesheet" />
+    <!-- custom css -->
+    <link href="css/client.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- toasts -->
+    <div id="toaster" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="toast_container">
+            <!-- toast container -->
+
+        </div>
+    </div>
+    <!-- navbar -->
+    <nav class="navbar fixed-top navbar-light">
+        <div class="navbar-brand">
+            <i class="fas fa-shield-alt"></i>
+            <span class="d-inline d-md-none">MODAS</span>
+            <span class="d-none d-md-inline" id="modas_long">Moving Object Detection Alert System</span>
+        </div>
+        <ul class="navbar-nav ml-auto mx-5" id="signIn">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto mx-5" id="signOut">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </li>
+        </ul>
+        <button disabled id="auto-refresh" type="button" class="btn btn-primary" data-val="false">
+            <i class="far fa-square"></i><span class="d-none d-sm-inline"> Auto Refresh</span>
+        </button>
+    </nav>
+    <!-- content -->
+    <div class="container" id="content">
+        <table class="table table-sm table-striped table-shadow">
+            <thead class="bg-success text-white">
+                <tr><th class="text-center">Flag</th><th>Date</th><th>Time</th><th>Location</th></tr>
+            </thead>
+            <tbody>
+                <!-- Event data here -->
+            </tbody>
+        </table>
+        <!-- use AJAX to navigate -->
+        <div class="row mb-3">
+            <div class="col">
+                <button disabled id="first" class="btn btn-outline-secondary" type="button"><i class="fas fa-angle-double-left"></i><span class="d-none d-md-inline"> First</span></button>
+                <button disabled id="prev" class="btn btn-outline-secondary" type="button"><i class="fas fa-angle-left"></i><span class="d-none d-md-inline"> Prev</span></button>
+            </div>
+            <div class="col text-center text-secondary">
+                <span id="start">##</span>-<span id="end">##</span>
+                of
+                <span id="total">##</span>
+                <div id="current" class="d-none" data-val=""></div>
+            </div>
+            <div class="col text-right">
+                <button disabled id="next" class="btn btn-outline-secondary" type="button"><span class="d-none d-md-inline">Next </span><i class="fas fa-angle-right"></i></button>
+                <button disabled id="last" class="btn btn-outline-secondary"><span class="d-none d-md-inline">Last </span><i class="fas fa-angle-double-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- modal for login -->
+    <div class="modal" tabindex="-1" role="dialog" id="signInModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-sign-in-alt"></i> Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Username" autocorrect="off" autocapitalize="none">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password" autocorrect="off" autocapitalize="none">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery framework -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.js"></script>
+    <!-- js-cookie -->
+    <script src="js/js-cookie.js"></script>
+    <script src="js/client.js"></script>
+</body>
+</html>

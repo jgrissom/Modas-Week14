@@ -1,0 +1,11 @@
+﻿{
+  "Jwt": {
+    "Key": "veryVerySecretKey",
+    "Issuer": "http://localhost:50231/"
+  },
+  "Data": {
+    "Modas": {
+      "ConnectionString": "Server=bitsql.wctc.edu;Database=Modas_19_JSG;User ID=XXX;Password=YYY"
+    }
+  }
+}

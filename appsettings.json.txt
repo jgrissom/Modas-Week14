@@ -1,11 +1,19 @@
 ﻿{
   "Jwt": {
     "Key": "veryVerySecretKey",
-    "Issuer": "http://localhost:50231/"
+    "ValidFor": 90,
+    "Role": "modas"
   },
-  "Data": {
-    "Modas": {
-      "ConnectionString": "Server=bitsql.wctc.edu;Database=Modas_19_JSG;User ID=XXX;Password=YYY"
+  "ConnectionStrings": {
+    "Modas": "Server=bitsql.wctc.edu;Database=Modas_19_JSG;User ID=xxx;Password=yyy",
+    "UserRoleAdmin": "Server=bitsql.wctc.edu;Database=UserRoleMgt_19_JSG;User ID=xxx;Password=yyy"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
     }
-  }
+  },
+  "AllowedHosts": "*"
 }
